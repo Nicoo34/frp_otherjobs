@@ -102,7 +102,6 @@ end
 
 function Traitement(istraitement)
     if istraitement then
- if cAPI.hasGroupOrInheritance("cheforange") or cAPI.hasGroupOrInheritance("orangeman") then
     DrawTxt("Appuyez sur ALT commencer à traiter ", 0.85, 0.95, 0.4, 0.4, true, 255, 255, 255, 255, true, 10000)
     if IsControlJustReleased(0, 0x8AAA0AD4) then
         local W = math.random(8000,15000)
@@ -113,7 +112,6 @@ function Traitement(istraitement)
             FreezeEntityPosition(playerPed,false)
             ClearPedTasks(playerPed)
             SetCurrentPedWeapon(PlayerPedId(), GetHashKey('WEAPON_UNARMED'), true)
-    end
     end
     else
         DrawTxt("Appuyez sur ALT commencer à récolter ", 0.85, 0.95, 0.4, 0.4, true, 255, 255, 255, 255, true, 10000) 
@@ -159,7 +157,6 @@ Citizen.CreateThread(
         local playerPed = PlayerPedId()
         local coords = GetEntityCoords(playerPed)
         for _, v in pairs(Config.Transformation) do
-        if cAPI.hasGroupOrInheritance("cheforange") or cAPI.hasGroupOrInheritance("orangeman") then
                 if getDistance(coords, v) < 2 then
                     DrawTxt("Appuyez sur ALT commencer à transformer ", 0.85, 0.95, 0.4, 0.4, true, 255, 255, 255, 255, true, 10000)
                     if IsControlJustReleased(0, 0x8AAA0AD4) then
@@ -176,7 +173,6 @@ Citizen.CreateThread(
             end
          end
     end
-end
 )
 
 Citizen.CreateThread(
@@ -186,7 +182,6 @@ Citizen.CreateThread(
         local playerPed = PlayerPedId()
         local coords = GetEntityCoords(playerPed)
         for _, v in pairs(Config.Revente) do
-        if cAPI.hasGroupOrInheritance("cheforange") or cAPI.hasGroupOrInheritance("orangeman") then
                 if getDistance(coords, v) < 2 then
                     DrawTxt("Appuyez sur ALT pour revendre ", 0.85, 0.95, 0.4, 0.4, true, 255, 255, 255, 255, true, 10000)
                     if IsControlJustReleased(0, 0x8AAA0AD4) then
@@ -196,7 +191,6 @@ Citizen.CreateThread(
             end
          end
     end
-end
 )
 
 
